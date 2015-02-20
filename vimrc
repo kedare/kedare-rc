@@ -61,6 +61,8 @@ let g:mapleader = "\<Space>"
 " Fast saving
 nmap <leader>w :w!<cr>
 
+" Completion
+set omnifunc=syntaxcomplete#Complete
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface

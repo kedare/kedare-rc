@@ -1,14 +1,16 @@
 #!/bin/env bash
 
 SCRIPT=`realpath $0`
-SCRIPTPATH=`dirname $SCRIPT`
-FILES=".vimrc .emacs .zshrc .tmux.conf"
+SCRIPT_PATH=`dirname $SCRIPT`
+FILES="vimrc tmux.conf"
 
-echo -e "This will backup your current .vimrc and .tmux.conf and create symlink\r\nto the current repository location (${SCRIPTPATH}) so don't move it after you ran the script.\r\n"
+echo -e "This will backup your current .vimrc and .tmux.conf and create symlink\r\nto the current repository location ($SCRIPT_PATH) so don't move it after you ran the script.\r\n"
 read -p "Press any key to continue... " -n1 -s
 
-for new_file in ${FILES}; do
-  echo -e "Processing ${new_file}"
-  #rm -rf ~/${new_file}
-  #ln -s $SCRIPTPATH/${new_file} ~/${new_file}
+for new_file in $FILES; do
+  backup_file=~/bkp_$new_file
+  echo -e "Processing $new_file"
+  mv ~/.$new_file $backup_file
+  bzip2 --best $backup_file
+  ln -s $SCRIPT_PATH/$new_file ~/.$new_file
 done

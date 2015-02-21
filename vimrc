@@ -64,6 +64,9 @@ nmap <leader>w :w!<cr>
 " Completion
 set omnifunc=syntaxcomplete#Complete
 
+" Ruby
+autocmd FileType ruby compiler ruby
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -135,6 +138,10 @@ if has("gui_running")
   set guitablabel=%M\ %t
   set guifont=Sauce\ Code\ Powerline:h10:cANSI
   language English
+endif
+
+if has("gui_macvim")
+  set guifont=Sauce\ Code\ Powerline
 endif
 
 set t_Co=256

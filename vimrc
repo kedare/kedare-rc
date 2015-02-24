@@ -429,6 +429,7 @@ NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'edkolev/tmuxline.vim'
 NeoBundle 'Shougo/unite.vim'
+NeoBundle 'kien/ctrlp.vim'
 
 " END OF MODULES SETUP
 

@@ -61,11 +61,6 @@ let g:mapleader = "\<Space>"
 " Fast saving
 nmap <leader>w :w!<cr>
 
-" Completion
-set omnifunc=syntaxcomplete#Complete
-
-" Ruby
-autocmd FileType ruby compiler ruby
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
@@ -140,10 +135,6 @@ if has("gui_running")
   language English
 endif
 
-if has("gui_macvim")
-  set guifont=Sauce\ Code\ Powerline
-endif
-
 set t_Co=256
 
 " Set utf8 as standard encoding and en_US as the standard language
@@ -210,7 +201,19 @@ map <C-h> <C-W>h
 map <C-l> <C-W>l
 
 " Close the current buffer
-map <leader>bd :Bclose<cr>
+map <leader>bd :bclose<cr>
+
+" Next buffer
+map <leader>bn :bnext<cr>
+
+" Previous buffer
+map <leader>bp :bprevious<cr>
+
+" Close buffer and go to the previous one
+nmap <leader>bq :bp <BAR> bd #<CR>
+
+" Show all open buffers and their status
+nmap <leader>bl :ls<CR>
 
 " Close all the buffers
 map <leader>ba :1,1000 bd!<cr>

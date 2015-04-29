@@ -1,18 +1,7 @@
-;; Security
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   (quote
-    ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" default))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+;;
+;; Mathieu Poussin
+;; mathieu.poussin@netyxia.net
+;;
 
 ;; Packages Loading
 (require 'package)
@@ -30,6 +19,9 @@
 
 (add-hook 'python-mode-hook 'jedi:setup)
 (setq jedi:complete-on-dot t)    
+(autoload 'python-mode "python-mode" "Python Mode." t)
+(add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
+(add-to-list 'interpreter-mode-alist '("python" . python-mode))
 
 (require 'smex)
 (smex-initialize)
@@ -52,25 +44,73 @@
 (sml/setup)
 (sml/apply-theme 'dark)
 
+(require 'scss-mode)
+
+;; ERC 
 (require 'erc)
+(require 'erc-list)
+(setq erc-user-full-name "Mathieu Poussin")
+(setq erc-email-userid "mpo@ntx.so")
 
+;;(setq erc-input-line-position -2)
 
-  (defun zone-choose (pgm)
-    "Choose a PGM to run for `zone'."
-    (interactive
-     (list
-      (completing-read
-       "Program: "
-       (mapcar 'symbol-name zone-programs))))
-    (let ((zone-programs (list (intern pgm))))
-      (zone)))
+(setq erc-log-insert-log-on-open nil)
+(setq erc-log-channels t)
+(setq erc-log-channels-directory "~/.irclogs/")
+(setq erc-save-buffer-on-part t)
 
+(defcustom pushover-token nil
+  "pushover application token")
+
+(defcustom pushover-user-key nil
+  "pushover user-key")
+
+(defun pushover-notify (title msg)
+  (let ((url-request-method "POST")
+	(url-request-data (concat "token=" pushover-token
+				  "&user=" pushover-user-key
+				  "&title=" title
+				  "&message=" msg)))
+    (url-retrieve "https://api.pushover.net/1/messages.json" 'pushover-kill-url-buffer)))
+
+(defun pushover-kill-url-buffer (status)
+  "Kill the buffer returned by `url-retrieve'."
+    (kill-buffer (current-buffer)))
+
+;; Notify my when someone mentions my nick.
+(defun erc-global-notify (matched-type nick msg)
+  (interactive)
+  (when (eq matched-type 'current-nick)
+    (pushover-notify "ERC Notification" (concat nick ": " message))
+   ))
+(add-hook 'erc-text-matched-hook 'erc-global-notify)
+
+;; END OF ERC
+
+;; Smooth Scrolling
+
+(setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
+
+(setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
+
+(setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
+
+(setq scroll-step 1) ;; keyboard scroll one line at a time
+
+(add-to-list 'erc-mode-hook (lambda ()
+  (set (make-local-variable 'scroll-conservatively) 1)))
+
+;; End of smooth scrolling
+
+(global-set-key (kbd "C-x C-z") 'next-multiframe-window)
 
 (require 'ido)
 (ido-mode t)
 
-(global-set-key (kbd "C-x C-b") 'ibuffer)
-    (autoload 'ibuffer "ibuffer" "List buffers." t)
+;;(global-set-key (kbd "C-x C-b") 'ibuffer)
+;;    (autoload 'ibuffer "ibuffer" "List buffers." t)
+
+(global-set-key (kbd "C-x C-b") 'helm-buffers-list) 
 
 (require 'org)
 (define-key global-map "\C-cl" 'org-store-link)

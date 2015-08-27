@@ -1,5 +1,5 @@
 #!/bin/env bash
-FILES="vimrc tmux.conf"
+FILES="zshrc vimrc tmux.conf"
 
 echo -e "This will backup your current files and copy new files to your home.\r\n"
 read -p "Press any key to continue... " -n1 -s

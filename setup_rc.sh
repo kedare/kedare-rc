@@ -7,16 +7,21 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 
 echo -e "Install zsh-syntax-highlighting\r\n"
 cd ~/.oh-my-zsh/custom/plugins
-git clone git://github.com/zsh-users/zsh-syntax-highlighting.git
+git clone --depth=1 git://github.com/zsh-users/zsh-syntax-highlighting.git
 cd $HERE
 
 echo -e "Install alias-tips"
 cd ~/.oh-my-zsh/custom/plugins
-git clone https://github.com/djui/alias-tips.git
+git clone --depth=1 https://github.com/djui/alias-tips.git
 cd $HERE
 
 echo "Installing VIM Neobudle\r\n"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh)"
+cd $HERE
+
+echo "Install .emacs.d\r\n"
+cd ~
+git clone --deph=1 https://github.com/mathieupoussin/emacs-rc.git .emacs.d
 cd $HERE
 
 echo -e "Installing custom RC\r\n"

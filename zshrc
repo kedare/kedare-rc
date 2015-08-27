@@ -19,7 +19,26 @@ COMPLETION_WAITING_DOTS="true"
 HIST_STAMPS="dd/mm/yyyy"
 
 # ZSH Plugins
-plugins=(tmux postgres perl git ruby rvm python cp docker emacs node npm nvm zsh-syntax-highlighting alias-tips)
+plugins=(tmux postgres sudo history svn git cp emacs rsync zsh-syntax-highlighting alias-tips)
+
+# Ruby
+plugins+=(ruby rvm gem bundler rake)
+
+# NodeJS / Javascript
+plugins+=(node npm nvm meteor jsontool)
+
+# Python
+plugins+=(python pep8 django)
+
+# Perl
+plugins+=(perl cpan)
+
+os=`uname`
+if [$os == "Darwin"]; then
+  plugins+=(brew brew-cask osx)
+elif [$os == "Linux"]; then
+  plugins+=(docker debian)
+fi
 
 # User configuration
 source $ZSH/oh-my-zsh.sh

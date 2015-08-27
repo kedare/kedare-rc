@@ -10,6 +10,11 @@ cd ~/.oh-my-zsh/custom/plugins
 git clone git://github.com/zsh-users/zsh-syntax-highlighting.git
 cd $HERE
 
+echo -e "Install alias-tips"
+cd ~/.oh-my-zsh/custom/plugins
+git clone https://github.com/djui/alias-tips.git
+cd $HERE
+
 echo "Installing VIM Neobudle\r\n"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh)"
 cd $HERE

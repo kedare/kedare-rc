@@ -19,7 +19,7 @@ COMPLETION_WAITING_DOTS="true"
 HIST_STAMPS="dd/mm/yyyy"
 
 # ZSH Plugins
-plugins=(tmux postgres perl git ruby rvm python cp docker emacs node npm nvm zsh-syntax-highlighting)
+plugins=(tmux postgres perl git ruby rvm python cp docker emacs node npm nvm zsh-syntax-highlighting alias-tips)
 
 # User configuration
 source $ZSH/oh-my-zsh.sh

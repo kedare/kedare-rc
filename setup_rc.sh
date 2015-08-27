@@ -21,7 +21,7 @@ cd $HERE
 
 echo "Install .emacs.d\r\n"
 cd ~
-git clone --deph=1 https://github.com/mathieupoussin/emacs-rc.git .emacs.d
+git clone --depth=1 https://github.com/mathieupoussin/emacs-rc.git .emacs.d
 cd $HERE
 
 echo -e "Installing custom RC\r\n"

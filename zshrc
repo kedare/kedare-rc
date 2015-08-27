@@ -2,7 +2,7 @@
 tmux -u -2 attach
 
 # Path to your oh-my-zsh installation.
-export ZSH=/home/kedare/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 
 # Favorite theme
 ZSH_THEME="agnoster"

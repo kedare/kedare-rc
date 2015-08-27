@@ -405,9 +405,7 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundle 'Shougo/neobundle.vim'
 
 " Ruby
-NeoBundle 'tpope/vim-rails'
 NeoBundle 'vim-ruby/vim-ruby'
-NeoBundle 'vadv/vim-chef'
 
 " Perl
 NeoBundle 'vim-perl/vim-perl'
@@ -418,6 +416,15 @@ NeoBundle 'davidhalter/jedi-vim'
 " PHP
 NeoBundle 'StanAngeloff/php.vim'
 
+" Javascript / NodeJS
+NeoBundle 'moll/vim-node'
+NeoBundle 'walm/jshint.vim'
+NeoBundle 'hallettj/jslint.vim'
+NeoBundle 'jelera/vim-javascript-syntax'
+NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'digitaltoad/vim-jade'
+NeoBundle 'wavded/vim-stylus'
+
 " Global
 NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'ervandew/supertab'
@@ -427,10 +434,12 @@ NeoBundle 'jlanzarotta/bufexplorer'
 NeoBundle 'xolox/vim-misc'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'scrooloose/syntastic'
-NeoBundle 'edkolev/tmuxline.vim'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'kien/ctrlp.vim'
-
+NeoBundle 'MarcWeber/vim-addon-mw-utils'
+NeoBundle 'tomtom/tlib_vim'
+NeoBundle 'garbas/vim-snipmate'
+NeoBundle 'honza/vim-snippets'
 " END OF MODULES SETUP
 
 call neobundle#end()
@@ -449,5 +458,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+au FileType javascript call JavaScriptFold()
 
 

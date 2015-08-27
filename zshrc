@@ -34,9 +34,9 @@ plugins+=(python pep8 django)
 plugins+=(perl cpan)
 
 os=`uname`
-if [$os == "Darwin"]; then
+if [[ $os == "Darwin" ]]; then
   plugins+=(brew brew-cask osx)
-elif [$os == "Linux"]; then
+elif [[ $os == "Linux" ]]; then
   plugins+=(docker debian)
 fi
 

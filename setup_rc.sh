@@ -18,7 +18,7 @@ echo -e "Installing custom RC\r\n"
 for new_file in $FILES; do
   backup_file=~/bkp_$new_file
   echo -e "Processing $new_file"
-  mv ~/.$new_file $backup_file
+  mv ~/.$new_file $backup_file &> /dev/null # Old files may not exist
   bzip2 --best $backup_file
   cp -r $new_file ~/.$new_file
 done

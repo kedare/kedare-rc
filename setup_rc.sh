@@ -1,9 +1,20 @@
 #!/bin/env bash
 FILES="zshrc vimrc tmux.conf"
+HERE=`pwd`
 
-echo -e "This will backup your current files and copy new files to your home.\r\n"
-read -p "Press any key to continue... " -n1 -s
+echo -e "Install oh-my-zsh\r\n"
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
+echo -e "Install zsh-syntax-highlighting\r\n"
+cd ~/.oh-my-zsh/custom/plugins
+git clone git://github.com/zsh-users/zsh-syntax-highlighting.git
+cd $HERE
+
+echo "Installing VIM Neobudle\r\n"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh)"
+cd $HERE
+
+echo -e "Installing custom RC\r\n"
 for new_file in $FILES; do
   backup_file=~/bkp_$new_file
   echo -e "Processing $new_file"
@@ -11,3 +22,4 @@ for new_file in $FILES; do
   bzip2 --best $backup_file
   cp -r $new_file ~/.$new_file
 done
+cd $HERE

@@ -49,4 +49,8 @@ export LANG=en_US.UTF-8
 # Aliases
 alias e="emacsclient -t"
 export NVM_DIR="~/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nv
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+if [ -f ~/.zshrc.local ]; then
+  source ~/.zshrc.local
+fi

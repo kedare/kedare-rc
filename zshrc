@@ -19,7 +19,19 @@ COMPLETION_WAITING_DOTS="true"
 HIST_STAMPS="dd/mm/yyyy"
 
 # ZSH Plugins
-plugins=(tmux postgres sudo history svn git cp emacs rsync zsh-syntax-highlighting alias-tips)
+plugins=()
+
+# Shell
+plugins+=(sudo history tmux cp rsync zsh-syntax-highlighting alias-tips zaw)
+
+# Versionning
+plugins+=(git svn)
+
+# Editors
+plugins+=(emacs)
+
+# Databases
+plugins+=(postgres)
 
 # Ruby
 plugins+=(ruby rvm gem bundler rake)
@@ -42,6 +54,9 @@ fi
 
 # User configuration
 source $ZSH/oh-my-zsh.sh
+
+# Bind C-Q C-Q to zaw
+bindkey '^Q^Q' zaw
 
 # I want English
 export LANG=en_US.UTF-8

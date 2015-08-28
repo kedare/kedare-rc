@@ -1,3 +1,7 @@
+if [ -f ~/.zshrc.pre.local ]; then
+  source ~/.zshrc.pre.local
+fi
+
 # Attach tmux before anything else
 tmux -u -2 attach
 
@@ -28,7 +32,7 @@ plugins+=(sudo history tmux cp rsync zsh-syntax-highlighting alias-tips zaw)
 plugins+=(git svn)
 
 # Editors
-plugins+=(emacs)
+plugins+=()
 
 # Databases
 plugins+=(postgres)
@@ -66,6 +70,6 @@ alias e="emacsclient -t"
 export NVM_DIR="~/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
-if [ -f ~/.zshrc.local ]; then
-  source ~/.zshrc.local
+if [ -f ~/.zshrc.post.local ]; then
+  source ~/.zshrc.post.local
 fi

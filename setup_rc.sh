@@ -1,9 +1,10 @@
 #!/bin/env bash
 FILES="zshrc vimrc tmux.conf"
 HERE=`pwd`
+OS=`uname`
 
 echo -e "ZSH: Install oh-my-zsh\r\n"
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+git clone --depth=1 https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh/
 
 echo -e "ZSH: Install zsh-syntax-highlighting\r\n"
 git clone --depth=1 git://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting

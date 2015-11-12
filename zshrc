@@ -50,13 +50,13 @@ plugins+=(python pep8 django)
 plugins+=(perl cpan)
 
 # System tools
-plugins*=(docker)
+plugins=(docker)
 
 os=`uname`
 if [[ $os == "Darwin" ]]; then
   plugins+=(brew brew-cask osx)
 elif [[ $os == "Linux" ]]; then
-  plugins+=(docker debian)
+  plugins+=(debian)
 fi
 
 # User configuration

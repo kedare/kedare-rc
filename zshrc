@@ -49,6 +49,9 @@ plugins+=(python pep8 django)
 # Perl
 plugins+=(perl cpan)
 
+# System tools
+plugins*=(docker)
+
 os=`uname`
 if [[ $os == "Darwin" ]]; then
   plugins+=(brew brew-cask osx)

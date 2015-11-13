@@ -400,51 +400,47 @@ endif
 endfunction
 
 " MODULES SETUP
-set runtimepath+=~/.vim/bundle/neobundle.vim/
-call neobundle#begin(expand('~/.vim/bundle/'))
-NeoBundle 'Shougo/neobundle.vim'
+call plug#begin('~/.vim/plugged')
+Plug 'Shougo/neobundle.vim'
 
 " Ruby
-NeoBundle 'vim-ruby/vim-ruby'
+Plug 'vim-ruby/vim-ruby'
 
 " Perl
-NeoBundle 'vim-perl/vim-perl'
+Plug 'vim-perl/vim-perl'
 
 " Python
-NeoBundle 'davidhalter/jedi-vim'
+Plug 'davidhalter/jedi-vim'
 
 " PHP
-NeoBundle 'StanAngeloff/php.vim'
+Plug 'StanAngeloff/php.vim'
 
 " Javascript / NodeJS
-NeoBundle 'moll/vim-node'
-NeoBundle 'walm/jshint.vim'
-NeoBundle 'hallettj/jslint.vim'
-NeoBundle 'jelera/vim-javascript-syntax'
-NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle 'digitaltoad/vim-jade'
-NeoBundle 'wavded/vim-stylus'
+Plug 'moll/vim-node'
+Plug 'walm/jshint.vim'
+Plug 'hallettj/jslint.vim'
+Plug 'jelera/vim-javascript-syntax'
+Plug 'kchmck/vim-coffee-script'
 
 " Global
-NeoBundle 'terryma/vim-multiple-cursors'
-NeoBundle 'ervandew/supertab'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'bling/vim-airline'
-NeoBundle 'jlanzarotta/bufexplorer'
-NeoBundle 'xolox/vim-misc'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'scrooloose/syntastic'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'kien/ctrlp.vim'
-NeoBundle 'MarcWeber/vim-addon-mw-utils'
-NeoBundle 'tomtom/tlib_vim'
-NeoBundle 'garbas/vim-snipmate'
-NeoBundle 'honza/vim-snippets'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'ervandew/supertab'
+Plug 'tpope/vim-surround'
+Plug 'bling/vim-airline'
+Plug 'jlanzarotta/bufexplorer'
+Plug 'xolox/vim-misc'
+Plug 'tpope/vim-fugitive'
+Plug 'scrooloose/syntastic'
+Plug 'Shougo/unite.vim'
+Plug 'kien/ctrlp.vim'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'garbas/vim-snipmate'
+Plug 'honza/vim-snippets'
 " END OF MODULES SETUP
+call plug#end()
 
-call neobundle#end()
 filetype plugin indent on
-NeoBundleCheck
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1

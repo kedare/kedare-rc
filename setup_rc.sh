@@ -18,9 +18,15 @@ git clone --depth=1 https://github.com/zsh-users/zsh-completions.git ~/.oh-my-zs
 echo -e "ZSH: Installing zaw"
 git clone --depth=1 https://github.com/zsh-users/zaw/ ~/.oh-my-zsh/custom/plugins/zaw
 
-echo "VIM: Installing Neobudle\r\n"
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh)"
+echo "VIM: Installing Plug\r\n"
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 cd $HERE
+
+echo "VIM: Symlinks for NVIM compat"
+mkdir -p ${XDG_CONFIG_HOME:=$HOME/.config}
+ln -s ~/.vim $XDG_CONFIG_HOME/nvim
+ln -s ~/.vimrc $XDG_CONFIG_HOME/nvim/init.vim
 
 echo "EMACS: Install .emacs.d\r\n"
 cd ~

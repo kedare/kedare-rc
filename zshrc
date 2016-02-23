@@ -3,16 +3,21 @@ if [ -f ~/.zshrc.pre.local ]; then
 fi
 
 # Attach tmux before anything else
-tmux -u -2 attach
+if [ -z $TMUX ]; then
+    tmux -u -2 attach
+fi
 
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
 
 # Favorite theme
-ZSH_THEME="agnoster"
+#ZSH_THEME="agnoster"
+#ZSH_THEME="jnrowe"
+ZSH_THEME="powerlevel9k/powerlevel9k"
+
 
 # Force term
-export TERM=xterm-256color
+export TERM="xterm-256color" 
 
 CASE_SENSITIVE="false"
 HYPHEN_INSENSITIVE="true"

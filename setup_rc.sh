@@ -15,9 +15,6 @@ git clone --depth=1 https://github.com/djui/alias-tips.git ~/.oh-my-zsh/custom/p
 echo -e "ZSH: Installing zsh-completions"
 git clone --depth=1 https://github.com/zsh-users/zsh-completions.git ~/.oh-my-zsh/custom/plugins/zsh-completions
 
-echo -e "ZSH: Installing zaw"
-git clone --depth=1 https://github.com/zsh-users/zaw/ ~/.oh-my-zsh/custom/plugins/zaw
-
 echo -e "ZSH: Installing Powershell9k"
 git clone --depth=1 https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
 

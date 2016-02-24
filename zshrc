@@ -12,7 +12,8 @@ export ZSH=~/.oh-my-zsh
 
 # Favorite theme
 #ZSH_THEME="agnoster"
-ZSH_THEME="jnrowe"
+#ZSH_THEME="jnrowe"
+ZSH_THEME="powerlevel9k/powerlevel9k"
 
 # Force term
 export TERM="xterm-256color" 
@@ -32,7 +33,7 @@ plugins=()
 plugins+=(sudo history tmux cp rsync zsh-syntax-highlighting alias-tips nice-exit-code)
 
 # Versionning
-plugins+=(git svn)
+plugins+=(git svn k)
 
 # Editors
 plugins+=()

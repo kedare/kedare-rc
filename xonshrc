@@ -1,0 +1,9 @@
+aliases['e'] = 'emacsclient -t'
+aliases['ccat'] = 'pygmentize -g'
+
+# Git aliases
+aliases['gp'] = 'git push'
+aliases['ga'] = 'git add'
+aliases['gA'] = 'git add -A'
+aliases['gc'] = 'git commit'
+aliases['gC'] = 'git commit -a'

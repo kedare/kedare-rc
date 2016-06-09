@@ -1,3 +1,6 @@
+$XONSH_COLOR_STYLE='monokai'
+
+
 aliases['e'] = 'emacsclient -t'
 aliases['ccat'] = 'pygmentize -g'
 

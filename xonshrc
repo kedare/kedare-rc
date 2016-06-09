@@ -1,6 +1,17 @@
+
+# Variables
+$GOPATH = 
+
+# TMUX management
+if 'TMUX' not in ${...}:
+  print('Hey TMUX')
+  tmux -u -2 attach
+
+# Styling
 $XONSH_COLOR_STYLE='monokai'
 
-
+# Generic aliases
+aliases['v'] = 'vim'
 aliases['e'] = 'emacsclient -t'
 aliases['ccat'] = 'pygmentize -g'
 

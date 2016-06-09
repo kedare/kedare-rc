@@ -1,5 +1,5 @@
 #!/bin/env bash
-FILES="zshrc vimrc tmux.conf"
+FILES="xonshrc zshrc vimrc tmux.conf"
 HERE=`pwd`
 OS=`uname`
 

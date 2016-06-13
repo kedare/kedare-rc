@@ -1,19 +1,23 @@
+import os
 
 # Variables
-$GOPATH = 
+$GOPATH = $HOME + '/.gopath'
+$TERM = 'screen-256color'
 
 # TMUX management
-if 'TMUX' not in ${...}:
+if 'TMUX' not in os.environ:
   print('Hey TMUX')
   tmux -u -2 attach
 
 # Styling
 $XONSH_COLOR_STYLE='monokai'
+$LANG = 'en_US.UTF-8'
 
 # Generic aliases
 aliases['v'] = 'vim'
 aliases['e'] = 'emacsclient -t'
 aliases['ccat'] = 'pygmentize -g'
+aliases['d'] = 'docker run -ti --entrypoint bash'
 
 # Git aliases
 aliases['gp'] = 'git push'

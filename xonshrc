@@ -12,6 +12,7 @@ if 'TMUX' not in os.environ:
 # Styling
 $XONSH_COLOR_STYLE='monokai'
 $LANG = 'en_US.UTF-8'
+$CASE_SENSITIVE_COMPLETIONS = False
 
 # Generic aliases
 aliases['v'] = 'vim'

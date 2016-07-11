@@ -16,7 +16,7 @@ export ZSH=~/.oh-my-zsh
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
 # Force term
-export TERM="xterm-256color" 
+export TERM="screen-256color" 
 
 CASE_SENSITIVE="false"
 HYPHEN_INSENSITIVE="true"

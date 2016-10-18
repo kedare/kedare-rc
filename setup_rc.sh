@@ -1,5 +1,5 @@
 #!/bin/env bash
-FILES="xonshrc zshrc vimrc tmux.conf"
+FILES="xonshrc zshrc vimrc tmux.conf spacemacs"
 HERE=`pwd`
 OS=`uname`
 
@@ -28,9 +28,9 @@ mkdir -p ${XDG_CONFIG_HOME:=$HOME/.config}
 ln -s ~/.vim $XDG_CONFIG_HOME/nvim
 ln -s ~/.vimrc $XDG_CONFIG_HOME/nvim/init.vim
 
-echo "EMACS: Install .emacs.d\r\n"
+echo "EMACS: Install SpaceEmacs\r\n"
 cd ~
-git clone --depth=1 https://github.com/mathieupoussin/emacs-rc.git .emacs.d
+git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 cd $HERE
 
 echo -e "Installing custom RC\r\n"

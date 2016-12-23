@@ -403,17 +403,8 @@ endfunction
 call plug#begin('~/.vim/plugged')
 Plug 'Shougo/neobundle.vim'
 
-" Ruby
-Plug 'vim-ruby/vim-ruby'
-
-" Perl
-Plug 'vim-perl/vim-perl'
-
 " Python
 Plug 'davidhalter/jedi-vim'
-
-" PHP
-Plug 'StanAngeloff/php.vim'
 
 " Javascript / NodeJS
 Plug 'moll/vim-node'
@@ -421,6 +412,9 @@ Plug 'walm/jshint.vim'
 Plug 'hallettj/jslint.vim'
 Plug 'jelera/vim-javascript-syntax'
 Plug 'kchmck/vim-coffee-script'
+
+" Elixir
+Plug 'slashmili/alchemist.vim'
 
 " Global
 Plug 'terryma/vim-multiple-cursors'
@@ -437,6 +431,8 @@ Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 Plug 'garbas/vim-snipmate'
 Plug 'honza/vim-snippets'
+Plug 'OmniSharp/omnisharp-vim'
+Plug 'tpope/vim-dispatch'
 " END OF MODULES SETUP
 call plug#end()
 

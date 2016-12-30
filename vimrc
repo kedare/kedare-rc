@@ -123,7 +123,7 @@ set tm=500
 " Enable syntax highlighting
 syntax enable
 
-colorscheme desert
+" colorscheme desert
 set background=dark
 
 " Set extra options when running in GUI mode
@@ -131,7 +131,7 @@ if has("gui_running")
   set guioptions-=T
   set guioptions+=e
   set guitablabel=%M\ %t
-  set guifont=Sauce\ Code\ Powerline:h10:cANSI
+  set guifont=monofur\ for\ Powerline:h12
   language English
 endif
 
@@ -143,6 +143,8 @@ set encoding=utf8
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
 
+highlight Pmenu ctermfg=white ctermbg=blue
+highlight PmenuSel ctermfg=black ctermbg=blue
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Files, backups and undo
@@ -414,9 +416,11 @@ Plug 'jelera/vim-javascript-syntax'
 Plug 'kchmck/vim-coffee-script'
 
 " Elixir
+Plug 'elixir-lang/vim-elixir'
 Plug 'slashmili/alchemist.vim'
 
 " Global
+Plug 'scrooloose/nerdtree'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'ervandew/supertab'
 Plug 'tpope/vim-surround'
@@ -431,12 +435,19 @@ Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 Plug 'garbas/vim-snipmate'
 Plug 'honza/vim-snippets'
-Plug 'OmniSharp/omnisharp-vim'
 Plug 'tpope/vim-dispatch'
+Plug 'flazz/vim-colorschemes'
+Plug 'Shougo/deoplete.nvim'
 " END OF MODULES SETUP
 call plug#end()
 
 filetype plugin indent on
+
+" Complete
+filetype plugin on
+
+" Use deoplete.
+let g:deoplete#enable_at_startup = 1
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
@@ -450,3 +461,5 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+

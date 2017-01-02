@@ -3,6 +3,8 @@ FILES="xonshrc zshrc vimrc tmux.conf spacemacs"
 HERE=`pwd`
 OS=`uname`
 
+
+## ZSH
 echo -e "ZSH: Install oh-my-zsh\r\n"
 git clone --depth=1 https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh/
 
@@ -18,6 +20,8 @@ git clone --depth=1 https://github.com/zsh-users/zsh-completions.git ~/.oh-my-zs
 echo -e "ZSH: Installing Powershell9k"
 git clone --depth=1 https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
 
+
+## VIM
 echo "VIM: Installing Plug\r\n"
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -28,11 +32,15 @@ mkdir -p ${XDG_CONFIG_HOME:=$HOME/.config}
 ln -s ~/.vim $XDG_CONFIG_HOME/nvim
 ln -s ~/.vimrc $XDG_CONFIG_HOME/nvim/init.vim
 
+
+## EMACS
 echo "EMACS: Install SpaceEmacs\r\n"
 cd ~
 git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 cd $HERE
 
+
+## Dot RC files
 echo -e "Installing custom RC\r\n"
 for new_file in $FILES; do
   backup_file=~/bkp_$new_file
@@ -42,3 +50,6 @@ for new_file in $FILES; do
   cp -r $new_file ~/.$new_file
 done
 cd $HERE
+
+mkdir -p ~/.config/fish/
+cp config.fish ~/config/fish/

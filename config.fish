@@ -1,3 +1,13 @@
+## Aliases
+abbr -a gco git commit
+abbr -a gca git commit -am 
+abbr -a gps git push
+abbr -a gpl git pull
+abbr -a gst git status
+abbr -a glg git log
+abbr -a ga git add
+abbr -a gaa git add -A
+
 ## Pyenv configuration
 set PYENV_ROOT $HOME/.pyenv
 set -x PATH $PYENV_ROOT/shims $PATH

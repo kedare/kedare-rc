@@ -22,5 +22,5 @@ brew install neovim/neovim/neovim
 brew install mtr ipcalc sipcalc minicom
 
 # Install common tools
-brew cask install vlc istat-menus spotify
+brew cask install vlc istat-menus spotify xquartz sourcetree iterm2
 brew install wine

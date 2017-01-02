@@ -7,6 +7,8 @@ abbr -a gst git status
 abbr -a glg git log
 abbr -a ga git add
 abbr -a gaa git add -A
+abbr -a gcl git clone
+abbr -a e emacsclient -t
 
 ## Pyenv configuration
 set PYENV_ROOT $HOME/.pyenv

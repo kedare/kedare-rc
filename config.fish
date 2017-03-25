@@ -1,19 +1,56 @@
-## Aliases
+## Aliase
+
+# GIt commits
 abbr -a gco git commit
+
+# Git commit everything with message
 abbr -a gca git commit -am 
+
+# Git push
 abbr -a gps git push
+
+# Git pull
 abbr -a gpl git pull
+
+# Git status
 abbr -a gst git status
+
+# Git log
 abbr -a glg git log
+
+# Git add
 abbr -a ga git add
+
+# Git add everything
 abbr -a gaa git add -A
+
+# Git clone
 abbr -a gcl git clone
+
+# Git clone faster, I don't care about the history
+abbr -a gcf git clone --depth=1
+
+# Emacs start daemon
+abbr -a edmn emacs --daemon
+
+# Emacs start client to daemon
 abbr -a e emacsclient -t
 
+# VIM replace with NeoVim
+abbr -a vim nvim
+
+# User .BIN directory
+set -x PATH ~/.bin $PATH
+
 ## Pyenv configuration
-set PYENV_ROOT $HOME/.pyenv
+set -x PYENV_ROOT $HOME/.pyenv
 set -x PATH $PYENV_ROOT/shims $PATH
 pyenv rehash
+status --is-interactive; and source (pyenv init -|psub)
+
+### GO
+set -x GOPATH ~/Go
+set -x PATH ~/Go/bin/ $PATH
 
 ### Git configuration
 set normal (set_color normal)

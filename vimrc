@@ -421,7 +421,8 @@ Plug 'fatih/vim-go'
 " SaltStack
 Plug 'saltstack/salt-vim'
 
-
+" Jenkins
+Plug 'martinda/Jenkinsfile-vim-syntax'
 
 " Global
 Plug 'scrooloose/nerdtree'

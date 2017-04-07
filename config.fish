@@ -13,7 +13,7 @@ abbr -a gps git push
 abbr -a gpl git pull
 
 # Git status
-abbr -a gst git status
+abbr -a gs git status
 
 # Git log
 abbr -a glg git log
@@ -26,6 +26,12 @@ abbr -a gaa git add -A
 
 # Git clone
 abbr -a gcl git clone
+
+# Git diff
+abbr -a gd git diff
+
+# Git cached diff
+abbr -a gdf git diff --cached
 
 # Git clone faster, I don't care about the history
 abbr -a gcf git clone --depth=1

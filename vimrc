@@ -415,9 +415,13 @@ Plug 'hallettj/jslint.vim'
 Plug 'jelera/vim-javascript-syntax'
 Plug 'kchmck/vim-coffee-script'
 
-" Elixir
-Plug 'elixir-lang/vim-elixir'
-Plug 'slashmili/alchemist.vim'
+" Golang
+Plug 'fatih/vim-go'
+
+" SaltStack
+Plug 'saltstack/salt-vim'
+
+
 
 " Global
 Plug 'scrooloose/nerdtree'

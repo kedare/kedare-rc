@@ -408,15 +408,9 @@ Plug 'Shougo/neobundle.vim'
 " Python
 Plug 'davidhalter/jedi-vim'
 
-" Javascript / NodeJS
-Plug 'moll/vim-node'
-Plug 'walm/jshint.vim'
-Plug 'hallettj/jslint.vim'
-Plug 'jelera/vim-javascript-syntax'
-Plug 'kchmck/vim-coffee-script'
-
 " Golang
 Plug 'fatih/vim-go'
+Plug 'zchee/deoplete-go', { 'do': 'make'}
 
 " SaltStack
 Plug 'saltstack/salt-vim'
@@ -443,6 +437,8 @@ Plug 'honza/vim-snippets'
 Plug 'tpope/vim-dispatch'
 Plug 'flazz/vim-colorschemes'
 Plug 'Shougo/deoplete.nvim'
+Plug 'rhysd/vim-color-spring-night'
+
 " END OF MODULES SETUP
 call plug#end()
 
@@ -467,4 +463,7 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+" Theme
+colorscheme spring-night
+let g:airline_theme = 'spring_night'
 

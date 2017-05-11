@@ -1,5 +1,12 @@
 ## Aliase
 
+set local_pre ~/.config/fish/config.pre.fish
+set local_post ~/.config/fish/config.post.fish 
+
+if test -e $local_pre  
+  source $local_pre
+end
+
 # GIt commits
 abbr -a gco git commit
 
@@ -94,4 +101,8 @@ function fish_prompt
   printf '%s ' (__fish_git_prompt)
 
   set_color normal
+end
+
+if test -e $local_post
+  source $local_post
 end

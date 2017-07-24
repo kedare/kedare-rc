@@ -18,6 +18,7 @@ values."
    ;; of a list then all discovered layers will be installed.
    dotspacemacs-configuration-layers
    '(
+     go
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
@@ -50,7 +51,6 @@ values."
      ansible
      erc
      osx
-     theme-megapack
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -122,11 +122,11 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
-   dotspacemacs-default-font '("Source Code Pro"
-                               :size 13
+   dotspacemacs-default-font '("monofur for Powerline"
+                               :size 16
                                :weight normal
                                :width normal
-                               :powerline-scale 1.1)
+                               :powerline-scale 1.5)
    ;; The leader key
    dotspacemacs-leader-key "SPC"
    ;; The leader key accessible in `emacs state' and `insert state'
@@ -265,6 +265,7 @@ executes.
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
   (setq-default mac-right-option-modifier nil)
+  (setq ns-use-srgb-colorspace nil)
   )
 
 (defun dotspacemacs/user-config ()
@@ -274,7 +275,7 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
-  (setq powerline-default-separator nil)
+  (setq powerline-default-separator contour)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -286,7 +287,7 @@ you should place your code here."
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (reveal-in-osx-finder pbcopy osx-trash osx-dictionary launchctl erc-yt erc-view-log erc-terminal-notifier erc-social-graph erc-image erc-hl-nicks nginx-mode jinja2-mode helm-dash dash-at-point ansible-doc ansible goto-chg diminish ob-elixir flycheck-mix alchemist elixir-mode pcache insert-shebang hide-comnt org yapfify uuidgen py-isort pug-mode org-projectile org-download mwim livid-mode skewer-mode simple-httpd live-py-mode link-hint git-link flyspell-correct-helm flyspell-correct eyebrowse evil-visual-mark-mode evil-unimpaired evil-ediff dumb-jump company-shell column-enforce-mode undo-tree yaml-mode web-mode web-beautify toc-org tagedit sql-indent smeargle slim-mode scss-mode sass-mode pyvenv pytest pyenv-mode py-yapf powershell pip-requirements orgit org-repo-todo org-present org-pomodoro alert log4e gntp org-plus-contrib org-bullets omnisharp csharp-mode mmm-mode markdown-toc markdown-mode magit-gitflow less-css-mode json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc jade-mode hy-mode htmlize helm-pydoc helm-gitignore request helm-flyspell helm-css-scss helm-company helm-c-yasnippet haml-mode gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter gh-md fsharp-mode flycheck-pos-tip flycheck fish-mode evil-magit magit magit-popup git-commit with-editor emmet-mode diff-hl cython-mode company-web web-completion-data company-tern dash-functional tern company-statistics company-quickhelp pos-tip company-anaconda company coffee-mode auto-yasnippet yasnippet auto-dictionary anaconda-mode pythonic f ac-ispell auto-complete ws-butler window-numbering volatile-highlights vi-tilde-fringe spaceline s powerline smooth-scrolling restart-emacs rainbow-delimiters popwin persp-mode pcre2el paradox hydra spinner page-break-lines open-junk-file neotree move-text macrostep lorem-ipsum linum-relative leuven-theme info+ indent-guide ido-vertical-mode hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery expand-region exec-path-from-shell evil-visualstar evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-args evil-anzu anzu eval-sexp-fu highlight elisp-slime-nav define-word clean-aindent-mode buffer-move bracketed-paste auto-highlight-symbol auto-compile packed dash aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async quelpa package-build use-package which-key bind-key bind-map evil spacemacs-theme))))
+    (shut-up winum unfill fuzzy flycheck-credo company-ansible go-guru go-eldoc company-go go-mode reveal-in-osx-finder pbcopy osx-trash osx-dictionary launchctl erc-yt erc-view-log erc-terminal-notifier erc-social-graph erc-image erc-hl-nicks nginx-mode jinja2-mode helm-dash dash-at-point ansible-doc ansible goto-chg diminish ob-elixir flycheck-mix alchemist elixir-mode pcache insert-shebang hide-comnt org yapfify uuidgen py-isort pug-mode org-projectile org-download mwim livid-mode skewer-mode simple-httpd live-py-mode link-hint git-link flyspell-correct-helm flyspell-correct eyebrowse evil-visual-mark-mode evil-unimpaired evil-ediff dumb-jump company-shell column-enforce-mode undo-tree yaml-mode web-mode web-beautify toc-org tagedit sql-indent smeargle slim-mode scss-mode sass-mode pyvenv pytest pyenv-mode py-yapf powershell pip-requirements orgit org-repo-todo org-present org-pomodoro alert log4e gntp org-plus-contrib org-bullets omnisharp csharp-mode mmm-mode markdown-toc markdown-mode magit-gitflow less-css-mode json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc jade-mode hy-mode htmlize helm-pydoc helm-gitignore request helm-flyspell helm-css-scss helm-company helm-c-yasnippet haml-mode gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter gh-md fsharp-mode flycheck-pos-tip flycheck fish-mode evil-magit magit magit-popup git-commit with-editor emmet-mode diff-hl cython-mode company-web web-completion-data company-tern dash-functional tern company-statistics company-quickhelp pos-tip company-anaconda company coffee-mode auto-yasnippet yasnippet auto-dictionary anaconda-mode pythonic f ac-ispell auto-complete ws-butler window-numbering volatile-highlights vi-tilde-fringe spaceline s powerline smooth-scrolling restart-emacs rainbow-delimiters popwin persp-mode pcre2el paradox hydra spinner page-break-lines open-junk-file neotree move-text macrostep lorem-ipsum linum-relative leuven-theme info+ indent-guide ido-vertical-mode hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery expand-region exec-path-from-shell evil-visualstar evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-args evil-anzu anzu eval-sexp-fu highlight elisp-slime-nav define-word clean-aindent-mode buffer-move bracketed-paste auto-highlight-symbol auto-compile packed dash aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async quelpa package-build use-package which-key bind-key bind-map evil spacemacs-theme))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

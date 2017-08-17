@@ -7,7 +7,7 @@ $TERM = 'screen-256color'
 # Styling
 $LANG = 'en_US.UTF-8'
 $CASE_SENSITIVE_COMPLETIONS = False
-$PROMPT = '{env_name:{} }{BOLD_GREEN}{hostname}{BOLD_BLUE} {short_cwd}{branch_color} {gitstatus} {NO_COLOR} {BOLD_BLUE}{prompt_end}{NO_COLOR} '
+$PROMPT = '{env_name:{} }{BOLD_GREEN}{hostname}{BOLD_BLUE} {short_cwd}{branch_color}{gitstatus: [{}]}{NO_COLOR} {BOLD_BLUE}{prompt_end}{NO_COLOR} '
 
 # Generic aliases
 aliases['v'] = 'nvim'

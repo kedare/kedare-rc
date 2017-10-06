@@ -132,8 +132,9 @@ if has("gui_running")
   set guioptions+=e
   set guitablabel=%M\ %t
   set guifont=monofur\ for\ Powerline:h12
-  language English
 endif
+
+lang en_US
 
 set t_Co=256
 
@@ -451,8 +452,10 @@ filetype plugin on
 let g:deoplete#enable_at_startup = 1
 
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 0
 let g:tmuxline_preset = 'full'
+
+let g:Powerline_symbols = 'unicode'
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}

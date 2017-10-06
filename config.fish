@@ -3,6 +3,8 @@
 set local_pre ~/.config/fish/config.pre.fish
 set local_post ~/.config/fish/config.post.fish 
 
+export LANG=en_US.UTF-8
+
 if test -e $local_pre  
   source $local_pre
 end

@@ -1,25 +1,7 @@
 #!/bin/env bash
-FILES="xonshrc zshrc vimrc tmux.conf spacemacs"
+FILES="xonshrc vimrc tmux.conf spacemacs"
 HERE=`pwd`
 OS=`uname`
-
-
-## ZSH
-echo -e "ZSH: Install oh-my-zsh\r\n"
-git clone --depth=1 https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh/
-
-echo -e "ZSH: Install zsh-syntax-highlighting\r\n"
-git clone --depth=1 git://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
-
-echo -e "ZSH: Install alias-tips"
-git clone --depth=1 https://github.com/djui/alias-tips.git ~/.oh-my-zsh/custom/plugins/alias-tips
-
-echo -e "ZSH: Installing zsh-completions"
-git clone --depth=1 https://github.com/zsh-users/zsh-completions.git ~/.oh-my-zsh/custom/plugins/zsh-completions
-
-echo -e "ZSH: Installing Powershell9k"
-git clone --depth=1 https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
-
 
 ## VIM
 echo "VIM: Installing Plug\r\n"
@@ -51,5 +33,12 @@ for new_file in $FILES; do
 done
 cd $HERE
 
+## FISH
 mkdir -p ~/.config/fish/
 cp config.fish ~/config/fish/
+
+# Fish Kubernetes completion
+mkdir -p ~/.config/fish/completions
+cd ~/.config/fish
+git clone https://github.com/evanlucas/fish-kubectl-completions
+ln -s ../fish-kubectl-completions/kubectl.fish completions/

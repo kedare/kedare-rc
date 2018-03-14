@@ -1,5 +1,5 @@
 #!/bin/env bash
-FILES="xonshrc vimrc tmux.conf spacemacs"
+FILES="xonshrc vimrc tmux.conf spacemacs ansible.cfg"
 HERE=`pwd`
 OS=`uname`
 

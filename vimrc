@@ -155,6 +155,10 @@ set nobackup
 set nowb
 set noswapfile
 
+if has("persistent_undo")
+    set undodir=~/.undodir/
+    set undofile
+endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab and indent related
@@ -413,8 +417,14 @@ Plug 'davidhalter/jedi-vim'
 Plug 'fatih/vim-go'
 Plug 'zchee/deoplete-go', { 'do': 'make'}
 
+" Rust
+Plug 'rust-lang/rust.vim'
+
 " SaltStack
 Plug 'saltstack/salt-vim'
+
+" Ansible
+Plug 'pearofducks/ansible-vim'
 
 " Jenkins
 Plug 'martinda/Jenkinsfile-vim-syntax'
@@ -439,6 +449,7 @@ Plug 'tpope/vim-dispatch'
 Plug 'flazz/vim-colorschemes'
 Plug 'Shougo/deoplete.nvim'
 Plug 'rhysd/vim-color-spring-night'
+Plug 'mbbill/undotree'
 
 " END OF MODULES SETUP
 call plug#end()

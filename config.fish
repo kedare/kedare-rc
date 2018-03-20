@@ -72,8 +72,7 @@ end
 abbr -a aras ara-manage runserver
 
 ### GO
-set -x GOPATH ~/Go
-set -x PATH ~/Go/bin/ $PATH
+set -x PATH ~/go/bin/ $PATH
 
 ### Git configuration
 set normal (set_color normal)

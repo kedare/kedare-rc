@@ -63,6 +63,14 @@ set -x PATH $PYENV_ROOT/shims $PATH
 pyenv rehash
 status --is-interactive; and source (pyenv init -|psub)
 
+# Exa replaces ls
+if type -q exa
+  abbr -a exa ls
+end
+
+# ARA web ui for Ansible
+abbr -a aras ara-manage runserver
+
 ### GO
 set -x GOPATH ~/Go
 set -x PATH ~/Go/bin/ $PATH

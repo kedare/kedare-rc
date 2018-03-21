@@ -59,13 +59,20 @@ set -x PATH ~/.bin $PATH
 
 ## Pyenv configuration
 set -x PYENV_ROOT $HOME/.pyenv
-set -x PATH $PYENV_ROOT/shims $PATH
-pyenv rehash
-status --is-interactive; and source (pyenv init -|psub)
+set -x PATH $PYENV_ROOT/shims $PYENV_ROOT/bin $PATH
+
+if type -q pyenv
+  pyenv rehash
+  status --is-interactive; and source (pyenv init -|psub)
+else
+  echo "Failed to load pyenv (not in PATH)"
+end
 
 # Exa replaces ls
 if type -q exa
   abbr -a exa ls
+else
+  echo "Failed to load exa (not in PATH)"
 end
 
 # ARA web ui for Ansible

@@ -9,6 +9,9 @@ if test -e $local_pre
   source $local_pre
 end
 
+# Download music from youtube
+abbr -a y2mp3 youtube-dl -x --audio-format mp3 --xattrs --audio-quality 7 --add-metadata --embed-thumbnail
+
 # GIt commits
 abbr -a gco git commit
 

@@ -73,7 +73,7 @@ end
 
 # Exa replaces ls
 if type -q exa
-  abbr -a exa ls
+  abbr -a ls exa
 else
   echo "Failed to load exa (not in PATH)"
 end

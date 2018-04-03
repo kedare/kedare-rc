@@ -3,10 +3,16 @@
 set local_pre ~/.config/fish/config.pre.fish
 set local_post ~/.config/fish/config.post.fish 
 
-export LC_ALL=en_US.UTF-8                                                                                                                                                                       export LANG=en_US.UTF-8
-
 if test -e $local_pre  
   source $local_pre
+end
+
+# Always run on TMUX
+if set -q TMUX
+else
+  if type -q tmux
+    tmux -2 -u attach
+  end
 end
 
 # Download music from youtube
@@ -70,6 +76,9 @@ if type -q pyenv
 else
   echo "Failed to load pyenv (not in PATH)"
 end
+
+## Rust/Cargo
+set -x PATH ~/.cargo/bin $PATH
 
 # Exa replaces ls
 if type -q exa

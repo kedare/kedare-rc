@@ -7,6 +7,10 @@ if test -e $local_pre
   source $local_pre
 end
 
+export LANG=en_US.utf8
+export LC_TYPE=$LANG
+export LC_CTYPE=$LANG
+
 # Always run on TMUX
 if set -q TMUX
 else

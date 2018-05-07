@@ -9,6 +9,8 @@ export ZSH=~/.oh-my-zsh
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="bureau"
 
+TERM="xterm-256color"
+
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
 # cause zsh load theme from this variable instead of
@@ -61,7 +63,6 @@ ZSH_THEME="bureau"
 plugins=(
   git
   ruby
-  emacs
   rvm
   vagrant
   docker
@@ -86,8 +87,7 @@ export LANG=en_US.UTF-8
 export EDITOR=nvim
 
 alias zshconfig="nvim $HOME/.zshrc"
-alias y2mp3="youtube-dl -x --audio-format mp3 --xattrs --audio-quality 7 --add-metadata --embed- 
-thumbnail"
+alias y2mp3="youtube-dl -x --audio-format mp3 --xattrs --audio-quality 7 --add-metadata --embed-thumbnail"
 alias gco="git commit"
 alias gcam="git commit -am"
 alias gps="git push"

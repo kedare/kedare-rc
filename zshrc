@@ -118,4 +118,5 @@ export PATH="$HOME/.cargo/bin:$PATH"
 
 # Go
 export PATH="$HOME/go/bin:$PATH"
+export GOFLAGS="-v"
 

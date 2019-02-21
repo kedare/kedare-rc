@@ -134,8 +134,6 @@ if has("gui_running")
   set guifont=monofur\ for\ Powerline:h12
 endif
 
-lang en_US
-
 set t_Co=256
 
 " Set utf8 as standard encoding and en_US as the standard language

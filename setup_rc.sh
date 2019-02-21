@@ -1,5 +1,5 @@
 #!/bin/env bash
-FILES="xonshrc vimrc tmux.conf spacemacs ansible.cfg"
+FILES="zshrc xonshrc vimrc tmux.conf spacemacs ansible.cfg"
 HERE=`pwd`
 OS=`uname`
 
@@ -33,6 +33,9 @@ for new_file in $FILES; do
 done
 cd $HERE
 
+# ZSH
+git clone git@github.com:robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+
 ## FISH
 mkdir -p ~/.config/fish/
 cp config.fish ~/config/fish/
@@ -42,3 +45,6 @@ mkdir -p ~/.config/fish/completions
 cd ~/.config/fish
 git clone https://github.com/evanlucas/fish-kubectl-completions
 ln -s ../fish-kubectl-completions/kubectl.fish completions/
+
+# PyEnv Installer
+curl https://pyenv.run | bash

@@ -104,6 +104,7 @@ alias e="emacsclient -t"
 alias edm="emacs --daemon"
 alias vim="nvim"
 alias aras="ara-manage runserver"
+alias tf="terraform"
 
 # Own .bin
 export PATH="$HOME/.bin:$PATH"
@@ -111,7 +112,7 @@ export PATH="$HOME/.bin:$PATH"
 # Pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH"
-pyenv rehash
+eval "$(pyenv init -)"
 
 # Rust / Cargo
 export PATH="$HOME/.cargo/bin:$PATH"

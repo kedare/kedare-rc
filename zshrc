@@ -105,6 +105,8 @@ alias edm="emacs --daemon"
 alias vim="nvim"
 alias aras="ara-manage runserver"
 alias tf="terraform"
+alias cat="bat"
+alias wt='watch -n1 $(fc -ln -1)'
 
 # Own .bin
 export PATH="$HOME/.bin:$PATH"

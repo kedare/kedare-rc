@@ -62,12 +62,7 @@ TERM="xterm-256color"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  ruby
-  rvm
-  vagrant
   docker
-  django
-  dnf
   golang
   postgres
   github
@@ -75,6 +70,16 @@ plugins=(
   sudo
   tmux
   python
+  ansible
+  alias-finder
+  colored-man-pages
+  command-not-found
+  debian
+  cp
+  emacs
+  helm
+  kubectl
+  pyenv
 )
 
 source $ZSH/oh-my-zsh.sh

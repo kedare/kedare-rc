@@ -4,16 +4,7 @@ HERE=`pwd`
 OS=`uname`
 
 ## VIM
-echo "VIM: Installing Plug\r\n"
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-cd $HERE
-
-echo "VIM: Symlinks for NVIM compat"
-mkdir -p ${XDG_CONFIG_HOME:=$HOME/.config}
-ln -s ~/.vim $XDG_CONFIG_HOME/nvim
-ln -s ~/.vimrc $XDG_CONFIG_HOME/nvim/init.vim
-
+curl -sLf https://spacevim.org/install.sh | bash
 
 ## EMACS
 echo "EMACS: Install SpaceEmacs\r\n"
@@ -21,6 +12,11 @@ cd ~
 git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 cd $HERE
 
+# ZSH
+sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# PyEnv Installer
+curl https://pyenv.run | bash
 
 ## Dot RC files
 echo -e "Installing custom RC\r\n"
@@ -33,18 +29,3 @@ for new_file in $FILES; do
 done
 cd $HERE
 
-# ZSH
-git clone git@github.com:robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
-
-## FISH
-mkdir -p ~/.config/fish/
-cp config.fish ~/config/fish/
-
-# Fish Kubernetes completion
-mkdir -p ~/.config/fish/completions
-cd ~/.config/fish
-git clone https://github.com/evanlucas/fish-kubectl-completions
-ln -s ../fish-kubectl-completions/kubectl.fish completions/
-
-# PyEnv Installer
-curl https://pyenv.run | bash

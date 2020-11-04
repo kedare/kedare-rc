@@ -14,7 +14,9 @@ cd $HERE
 
 ## ASDF
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.8.0
+mkdir -p .config/fish/conf.d/
 echo "source ~/.asdf/asdf.fish" > ~/.config/fish/conf.d/asdf.fish
+mkdir -p ~/.config/fish/completions; and cp ~/.asdf/completions/asdf.fish ~/.config/fish/completions
 source ~/.asdf/asdf.fish
 asdf plugin install python
 asdf plugin install golang

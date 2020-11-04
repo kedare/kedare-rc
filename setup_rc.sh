@@ -1,5 +1,5 @@
 #!/bin/env bash
-FILES="zshrc xonshrc vimrc tmux.conf spacemacs ansible.cfg"
+FILES="tmux.conf"
 HERE=`pwd`
 OS=`uname`
 
@@ -12,11 +12,14 @@ cd ~
 git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 cd $HERE
 
-# ZSH
-sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+## ASDF
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.8.0
+echo "source ~/.asdf/asdf.fish" > ~/.config/fish/conf.d/asdf.fish
+source ~/.asdf/asdf.fish
+asdf plugin install python
+asdf plugin install golang
+asdf plugin install nodejs
 
-# PyEnv Installer
-curl https://pyenv.run | bash
 
 ## Dot RC files
 echo -e "Installing custom RC\r\n"

@@ -5,6 +5,8 @@ OS=`uname`
 
 ## VIM
 curl -sLf https://spacevim.org/install.sh | bash
+mkdir -p ~/.SpaceVim.d/
+cp spacevim.toml ~/.SpaceVim.d/init.toml
 
 ## EMACS
 echo "EMACS: Install SpaceEmacs\r\n"
@@ -13,15 +15,18 @@ git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 cd $HERE
 
 ## ASDF
-git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.8.0
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf
 mkdir -p ~/.config/fish/conf.d/
 echo "source ~/.asdf/asdf.fish" > ~/.config/fish/conf.d/asdf.fish
-mkdir -p ~/.config/fish/completions; and cp ~/.asdf/completions/asdf.fish ~/.config/fish/completions
+mkdir -p ~/.config/fish/completions
+cp ~/.asdf/completions/asdf.fish ~/.config/fish/completions
 source ~/.asdf/asdf.fish
 asdf plugin add python
 asdf plugin add golang
 asdf plugin add nodejs
 
+## TMUX
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 ## Dot RC files
 echo -e "Installing custom RC\r\n"

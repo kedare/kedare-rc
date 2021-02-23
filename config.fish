@@ -1,12 +1,5 @@
 ## Aliase
 
-set local_pre ~/.config/fish/config.pre.fish
-set local_post ~/.config/fish/config.post.fish 
-
-if test -e $local_pre  
-  source $local_pre
-end
-
 export LANG=en_US.utf8
 export LC_TYPE=$LANG
 export LC_CTYPE=$LANG
@@ -70,17 +63,6 @@ abbr -a vim nvim
 # User .BIN directory
 set -x PATH ~/.bin $PATH
 
-## Pyenv configuration
-set -x PYENV_ROOT $HOME/.pyenv
-set -x PATH $PYENV_ROOT/shims $PYENV_ROOT/bin $PATH
-
-if type -q pyenv
-  pyenv rehash
-  status --is-interactive; and source (pyenv init -|psub)
-else
-  echo "Failed to load pyenv (not in PATH)"
-end
-
 ## Rust/Cargo
 set -x PATH ~/.cargo/bin $PATH
 
@@ -97,44 +79,3 @@ abbr -a aras ara-manage runserver
 ### GO
 set -x PATH ~/go/bin/ $PATH
 
-### Git configuration
-set normal (set_color normal)
-set magenta (set_color magenta)
-set yellow (set_color yellow)
-set green (set_color green)
-set red (set_color red)
-set gray (set_color -o black)
-
-# Fish git prompt
-set __fish_git_prompt_showdirtystate 'yes'
-set __fish_git_prompt_showstashstate 'yes'
-set __fish_git_prompt_showuntrackedfiles 'yes'
-set __fish_git_prompt_showupstream 'yes'
-set __fish_git_prompt_color_branch yellow
-set __fish_git_prompt_color_upstream_ahead green
-set __fish_git_prompt_color_upstream_behind red
-
-# Status Chars
-set __fish_git_prompt_char_dirtystate '⚡'
-set __fish_git_prompt_char_stagedstate '→'
-set __fish_git_prompt_char_untrackedfiles '☡'
-set __fish_git_prompt_char_stashstate '↩'
-set __fish_git_prompt_char_upstream_ahead '+'
-set __fish_git_prompt_char_upstream_behind '-'
-
-
-function fish_prompt
-  set last_status $status
-
-  set_color $fish_color_cwd
-  printf '%s' (prompt_pwd)
-  set_color normal
-
-  printf '%s ' (__fish_git_prompt)
-
-  set_color normal
-end
-
-if test -e $local_post
-  source $local_post
-end

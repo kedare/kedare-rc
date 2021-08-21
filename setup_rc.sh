@@ -1,5 +1,5 @@
 #!/bin/env bash
-FILES="tmux.conf"
+FILES="tmux.conf bashrc"
 HERE=`pwd`
 OS=`uname`
 

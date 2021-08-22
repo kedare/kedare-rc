@@ -11,8 +11,8 @@
 # ridden in every subshell.
 
 test -s ~/.alias && . ~/.alias || true
-source  "$HOME/.cargo/env"
-#source /usr/share/powerline/shell/powerline.sh
+source "$HOME/.cargo/env"
+source "$HOME/.asdf/asdf.sh"
 
 iatest=$(expr index "$-" i)
 

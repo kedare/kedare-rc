@@ -1,5 +1,5 @@
 #!/bin/env bash
-FILES="tmux.conf bashrc"
+FILES="tmux.conf bashrc zshrc"
 HERE=`pwd`
 OS=`uname`
 
@@ -18,6 +18,9 @@ cd $HERE
 mkdir -p ~/.config/fish/conf.d/
 cp config.fish ~/.config/fish/conf.d/custom.fish
 cp fish_variables ~/.config/fish/
+
+## ZSH
+git clone https://github.com/ohmyzsh/ohmyzsh .oh-my-zsh
 
 ## ASDF
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf

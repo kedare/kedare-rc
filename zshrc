@@ -7,7 +7,7 @@ export ZSH=~/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="bureau"
+ZSH_THEME="agnoster"
 
 TERM="xterm-256color"
 
@@ -74,12 +74,7 @@ plugins=(
   alias-finder
   colored-man-pages
   command-not-found
-  debian
   cp
-  emacs
-  helm
-  kubectl
-  pyenv
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -115,11 +110,6 @@ alias wt='watch -n1 $(fc -ln -1)'
 
 # Own .bin
 export PATH="$HOME/.bin:$PATH"
-
-# Pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
 
 # Rust / Cargo
 export PATH="$HOME/.cargo/bin:$PATH"

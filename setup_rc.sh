@@ -10,24 +10,14 @@ cp spacevim.toml ~/.SpaceVim.d/init.toml
 
 ## EMACS
 echo "EMACS: Install SpaceEmacs\r\n"
-cd ~
 git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
-cd $HERE
-
-## FISH
-mkdir -p ~/.config/fish/conf.d/
-cp config.fish ~/.config/fish/conf.d/custom.fish
-cp fish_variables ~/.config/fish/
 
 ## ZSH
-git clone https://github.com/ohmyzsh/ohmyzsh .oh-my-zsh
+git clone https://github.com/ohmyzsh/ohmyzsh ~/.oh-my-zsh
 
 ## ASDF
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf
-echo "source ~/.asdf/asdf.fish" > ~/.config/fish/conf.d/asdf.fish
-mkdir -p ~/.config/fish/completions
-cp ~/.asdf/completions/asdf.fish ~/.config/fish/completions
-source ~/.asdf/asdf.fish
+source ~/.asdf/asdf.sh
 asdf plugin add python
 asdf plugin add golang
 asdf plugin add nodejs

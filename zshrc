@@ -75,6 +75,7 @@ plugins=(
   colored-man-pages
   command-not-found
   cp
+  asdf
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -91,6 +92,7 @@ alias y2mp3="youtube-dl -x --audio-format mp3 --xattrs --audio-quality 7 --add-m
 alias gco="git commit"
 alias gcam="git commit -am"
 alias gps="git push"
+alias gpsu='git push -u origin $(git branch --show-current)'
 alias gpl="git pull"
 alias gs="git status"
 alias glg="git log"
@@ -100,6 +102,9 @@ alias gcl="git clone"
 alias gd="git diff"
 alias gdc="git diff --cached"
 alias gcs="git clone --depth=1"
+alias gcam="git commit -am"
+alias gca="git add -A"
+alias ggc="git gc --force --aggressive"
 alias e="emacsclient -t"
 alias edm="emacs --daemon"
 alias vim="nvim"

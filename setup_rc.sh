@@ -1,12 +1,9 @@
 #!/bin/env bash
 FILES="tmux.conf bashrc zshrc"
-HERE=`pwd`
-OS=`uname`
+HERE=$(pwd)
 
 ## VIM
-curl -sLf https://spacevim.org/install.sh | bash
-mkdir -p ~/.SpaceVim.d/
-cp spacevim.toml ~/.SpaceVim.d/init.toml
+git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim
 
 ## EMACS
 echo "EMACS: Install SpaceEmacs\r\n"
@@ -17,10 +14,13 @@ git clone https://github.com/ohmyzsh/ohmyzsh ~/.oh-my-zsh
 
 ## ASDF
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf
-source ~/.asdf/asdf.sh
+source $HOME/.asdf/asdf.sh
 asdf plugin add python
 asdf plugin add golang
 asdf plugin add nodejs
+asdf plugin add ruby
+asdf plugin add erlang
+asdf plugin add elixir
 
 ## TMUX
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm

@@ -76,6 +76,8 @@ plugins=(
   command-not-found
   cp
   asdf
+  macos
+  brew
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -92,7 +94,7 @@ alias y2mp3="youtube-dl -x --audio-format mp3 --xattrs --audio-quality 7 --add-m
 alias gco="git commit"
 alias gcam="git commit -am"
 alias gps="git push"
-alias gpsu='git push -u origin $(git branch --show-current)'
+#alias gpsu='git push -u origin $(git branch --show-current)'
 alias gpl="git pull"
 alias gs="git status"
 alias glg="git log"
@@ -115,7 +117,7 @@ alias wt='watch -n1 $(fc -ln -1)'
 alias k="kubectl"
 
 # Own .bin
-export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.bin:$HOME/.local/bin:$PATH"
 
 # Rust / Cargo
 export PATH="$HOME/.cargo/bin:$PATH"
@@ -127,3 +129,17 @@ export PATH="$HOME/go/bin:$PATH"
 export GOFLAGS="-v"
 
 eval "$(starship init zsh)"
+
+function gpsu {
+  TITLE=$(gum input --placeholder "Commit title")
+  DESCRIPTION=$(gum write --placeholder "Commit text")
+  git commit -m "$TITLE" -m "$DESCRIPTION"
+
+  REMOTE_BRANCH_EXISTS=$(git ls-remote origin $(git branch --show-current) | wc -l)
+  if [[ $REMOTE_BRANCH_EXISTS -eq "0" ]]
+  then
+    gum confirm "Push new branch?" && git push -u origin $(git branch --show-current)
+  else
+    git push
+  fi
+}

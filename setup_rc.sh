@@ -1,6 +1,13 @@
 #!/bin/env bash
 FILES="tmux.conf bashrc zshrc"
 HERE=$(pwd)
+unameOut="$(uname -s)"
+case "${unameOut}" in
+    Linux*)     machine=Linux;;
+    Darwin*)    machine=Mac;;
+    *)          machine="UNKNOWN:${unameOut}"
+esac
+echo "${machine}"
 
 ## VIM
 git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim
@@ -22,8 +29,18 @@ asdf plugin add ruby
 asdf plugin add erlang
 asdf plugin add elixir
 
+# Go
+asdf install golang 1.18.5
+asdf global golang 1.18.5
+asdf reshim
+go install github.com/charmbracelet/gum@latest
+
 ## TMUX
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+# Rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs > /tmp/rustup.sh
+bash /tmp/rustup.sh --no-modify-path -y --profile complete
 
 ## Dot RC files
 echo -e "Installing custom RC\r\n"

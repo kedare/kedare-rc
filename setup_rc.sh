@@ -34,6 +34,7 @@ asdf install golang 1.18.5
 asdf global golang 1.18.5
 asdf reshim
 go install github.com/charmbracelet/gum@latest
+go install github.com/nao1215/gup@latest
 
 ## TMUX
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm

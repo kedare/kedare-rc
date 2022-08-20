@@ -131,8 +131,13 @@ export GOFLAGS="-v"
 eval "$(starship init zsh)"
 
 function gpsu {
+  STASH_ALL=$(gum confirm "Stash all?")
   TITLE=$(gum input --placeholder "Commit title")
   DESCRIPTION=$(gum write --placeholder "Commit text")
+  if [[ $STASH_ALL -eq "0" ]]
+  then
+    git add -A
+  fi
   git commit -m "$TITLE" -m "$DESCRIPTION"
 
   REMOTE_BRANCH_EXISTS=$(git ls-remote origin $(git branch --show-current) | wc -l)
@@ -143,3 +148,5 @@ function gpsu {
     git push
   fi
 }
+
+source $HOME/.zshrc.post

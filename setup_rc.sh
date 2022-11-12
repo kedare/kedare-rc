@@ -1,5 +1,11 @@
 #!/bin/env bash
+
+# Configuration
 FILES="tmux.conf bashrc zshrc"
+VERSION_GO=1.9.3
+VERSION_NODEJS=19.0.1
+VERSION_PYTHON=3.11.0
+
 HERE=$(pwd)
 unameOut="$(uname -s)"
 case "${unameOut}" in
@@ -30,9 +36,13 @@ asdf plugin add erlang
 asdf plugin add elixir
 
 # Go
-asdf install golang 1.18.5
-asdf global golang 1.18.5
+asdf install golang $VERSION_GO
+asdf global golang $VERSION_GO
+asdf install nodejs $VERSION_NODEJS
+asdf global nodejs $VERSION_NODEJS
+
 asdf reshim
+
 go install github.com/charmbracelet/gum@latest
 go install github.com/nao1215/gup@latest
 

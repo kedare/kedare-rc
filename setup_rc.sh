@@ -2,7 +2,7 @@
 
 # Configuration
 FILES="tmux.conf bashrc zshrc"
-VERSION_GO=1.9.3
+VERSION_GO=1.19.3
 VERSION_NODEJS=19.0.1
 VERSION_PYTHON=3.11.0
 

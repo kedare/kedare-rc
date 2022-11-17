@@ -121,7 +121,7 @@ export PATH="$HOME/.bin:$HOME/.local/bin:$PATH"
 # Rust / Cargo
 export PATH="$HOME/.cargo/bin:$PATH"
 alias lsx="exa -lha --git"
-alias update-rust-tools="rustup update; cargo install starship exa bat ripgrep fd-find procs sd tealdeer tokei du-dust grex git-delta difftastic"
+alias update-rust-tools="rustup update; cargo install --locked starship exa bat ripgrep fd-find procs sd tealdeer tokei du-dust grex git-delta difftastic"
 
 # Go
 export PATH="$HOME/go/bin:$PATH"

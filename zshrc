@@ -86,9 +86,9 @@ source $ZSH/oh-my-zsh.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 export LANG=en_US.UTF-8
-export EDITOR=nvim
+export EDITOR=lvim
 
-alias zshconfig="nvim $HOME/.zshrc"
+alias zshconfig="lvim $HOME/.zshrc"
 alias y2mp3="youtube-dl -x --audio-format mp3 --xattrs --audio-quality 7 --add-metadata --embed-thumbnail"
 alias gco="git commit"
 alias gcam="git commit -am"
@@ -108,7 +108,7 @@ alias gca="git add -A"
 alias ggc="git gc --force --aggressive"
 alias e="emacsclient -t"
 alias edm="emacs --daemon"
-alias vim="nvim"
+alias vim="lvim"
 alias aras="ara-manage runserver"
 alias tf="terraform"
 alias cat="bat"

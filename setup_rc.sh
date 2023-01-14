@@ -2,7 +2,7 @@
 
 # Configuration
 FILES="tmux.conf bashrc zshrc"
-VERSION_GO=1.19.3
+VERSION_GO=1.19.4
 VERSION_NODEJS=19.0.1
 VERSION_PYTHON=3.11.0
 
@@ -16,7 +16,7 @@ esac
 echo "${machine}"
 
 ## VIM
-git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim
+LV_BRANCH='release-1.2/neovim-0.8' bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/fc6873809934917b470bff1b072171879899a36b/utils/installer/install.sh)
 
 ## EMACS
 echo "EMACS: Install SpaceEmacs\r\n"

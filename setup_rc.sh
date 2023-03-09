@@ -2,9 +2,9 @@
 
 # Configuration
 FILES="tmux.conf bashrc zshrc"
-VERSION_GO=1.19.4
+VERSION_GO=1.20.1
 VERSION_NODEJS=19.0.1
-VERSION_PYTHON=3.11.0
+VERSION_PYTHON=3.11.2
 
 HERE=$(pwd)
 unameOut="$(uname -s)"

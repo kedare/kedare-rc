@@ -43,7 +43,6 @@ asdf global nodejs $VERSION_NODEJS
 
 asdf reshim
 
-go install github.com/charmbracelet/gum@latest
 go install github.com/nao1215/gup@latest
 
 ## TMUX
@@ -51,7 +50,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # Rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs > /tmp/rustup.sh
-bash /tmp/rustup.sh --no-modify-path -y --profile complete
+bash /tmp/rustup.sh --no-modify-path -y
 
 ## Dot RC files
 echo -e "Installing custom RC\r\n"

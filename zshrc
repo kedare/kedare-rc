@@ -118,6 +118,9 @@ alias k="kubectl"
 # Own .bin
 export PATH="$HOME/.bin:$HOME/.local/bin:$PATH"
 
+# NodeJS / Yarn
+export PATH="$HOME/.yarn/bin:$PATH"
+
 # Rust / Cargo
 export PATH="$HOME/.cargo/bin:$PATH"
 alias lsx="exa -lha --git"

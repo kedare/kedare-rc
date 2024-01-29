@@ -130,8 +130,13 @@ alias update-rust-tools="rustup update; cargo install --locked starship exa bat 
 export PATH="$HOME/go/bin:$PATH"
 export GOFLAGS="-v"
 
+# BAT
+export BAT_THEME="Visual Studio Dark+"
+
+# Setup Starship
 eval "$(starship init zsh)"
 
+# Git push new branch
 function gpsu {
   STASH_ALL=$(gum confirm "Stash all?")
   TITLE=$(gum input --placeholder "Commit title")

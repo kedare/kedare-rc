@@ -2,9 +2,9 @@
 
 # Configuration
 FILES="tmux.conf bashrc zshrc"
-VERSION_GO=1.22.0
+VERSION_GO=1.22.1
 VERSION_NODEJS=20.5.0
-VERSION_PYTHON=3.12.1
+VERSION_PYTHON=3.12.2
 
 HERE=$(pwd)
 unameOut="$(uname -s)"
@@ -61,5 +61,6 @@ for new_file in $FILES; do
   bzip2 --best $backup_file &> /dev/null # Old files may not exist
   cp -r $new_file ~/.$new_file
 done
+cp starship.toml $HOME/.config/starship.toml
 cd $HERE
 

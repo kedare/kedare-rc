@@ -61,12 +61,12 @@ TERM="xterm-256color"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+  zsh-vi-mode
   docker
   golang
   postgres
   github
   nmap
-  sudo
   tmux
   python
   ansible
@@ -74,7 +74,6 @@ plugins=(
   colored-man-pages
   command-not-found
   cp
-  asdf
   macos
   brew
 )
@@ -164,35 +163,6 @@ function gpsu {
   fi
 }
 
-function ansible-debug-variable {
-  export PYTHONWARNINGS="ignore"
-  ansible -i inventory.hosts -m debug -a var="$2" $1
-  unset PYTHONWARNINGS
-}
-
-function ansible-debug-inventory {
-  export PYTHONWARNINGS="ignore"
-  ansible-inventory -i inventory.hosts --host $1
-  unset PYTHONWARNINGS
-}
-
-function dive-local {
-  image=$1
-  tmp_image=/tmp/docker-export-$image.tar
-
-  echo "Saving $1 to $tmp_image"
-  docker save $1 -o $tmp_image
-  dive $tmp_image --source=docker-archive
-  echo "Clearing temporary image"
-  rm $tmp_image
-}
-
-function docker-prune {
-  docker kill $(docker ps -q)
-  docker rm $(docker ps -qa)
-  docker rmi $(docker images -q)
-  docker network prune -f
-  docker volume prune -f
-}
-
+touch $HOME/.zshrc.post
 source $HOME/.zshrc.post
+

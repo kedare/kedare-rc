@@ -1,10 +1,10 @@
 #!/bin/env bash
 
 # Configuration
-FILES="tmux.conf bashrc zshrc"
-VERSION_GO=1.22.1
-VERSION_NODEJS=20.5.0
-VERSION_PYTHON=3.12.2
+FILES="tmux.conf bashrc zshrc wezterm.lua"
+VERSION_GO=1.24.0
+VERSION_NODEJS=23.8.0
+VERSION_PYTHON=3.13.2
 
 HERE=$(pwd)
 unameOut="$(uname -s)"
@@ -16,7 +16,7 @@ esac
 echo "${machine}"
 
 ## VIM
-LV_BRANCH='release-1.2/neovim-0.8' bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/fc6873809934917b470bff1b072171879899a36b/utils/installer/install.sh)
+LV_BRANCH='release-1.4/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.4/neovim-0.9/utils/installer/install.sh)
 
 ## EMACS
 echo "EMACS: Install SpaceEmacs\r\n"
@@ -26,8 +26,7 @@ git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 git clone https://github.com/ohmyzsh/ohmyzsh ~/.oh-my-zsh
 
 ## ASDF
-git clone https://github.com/asdf-vm/asdf.git ~/.asdf
-source $HOME/.asdf/asdf.sh
+go install github.com/asdf-vm/asdf/cmd/asdf@v0.16.0
 asdf plugin add python
 asdf plugin add golang
 asdf plugin add nodejs
@@ -47,6 +46,10 @@ go install github.com/nao1215/gup@latest
 
 ## TMUX
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+# ZSH vim mode
+git clone https://github.com/jeffreytse/zsh-vi-mode \
+  $HOME/.oh-my-zsh/plugins/zsh-vi-mode
 
 # Rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs > /tmp/rustup.sh

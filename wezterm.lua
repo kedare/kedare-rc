@@ -14,12 +14,12 @@ config.leader = { key = 'a', mods = 'CTRL', timeout_milliseconds = 1000 }
 config.keys = {
 
   {
-    key = 'Delete',
-    mods = 'LEADER|CTRL',
+    key = '=',
+    mods = 'LEADER',
     action = act.SplitHorizontal { domain = 'CurrentPaneDomain' },
   },
   {
-    key = 'Delete',
+    key = '-',
     mods = 'LEADER',
     action = act.SplitVertical { domain = 'CurrentPaneDomain' },
   },
@@ -43,10 +43,45 @@ config.keys = {
     mods = 'LEADER',
     action = act.ActivatePaneDirection 'Down',
   },
+  {
+    key = ',',
+    mods = 'LEADER',
+    action = act.ActivateTabRelative(-1),
+  },
+  {
+    key = '.',
+    mods = 'LEADER',
+    action = act.ActivateTabRelative(-1),
+  },
+  {
+    key = 'End',
+    mods = 'LEADER',
+    action = act.ScrollToBottom,
+  },
+  {
+    key = 'Home',
+    mods = 'LEADER',
+    action = act.ScrollToTop,
+  },
+  {
+    key = 'PageUp',
+    mods = 'LEADER',
+    action = act.ScrollByPage(-1),
+  },
+  {
+    key = 'PageDown',
+    mods = 'LEADER',
+    action = act.ScrollByPage(1),
+  },
+  {
+    key = 'Enter',
+    mods = 'LEADER',
+    action = act.ShowLauncher,
+  },
   -- Send "CTRL-A" to the terminal when pressing CTRL-A, CTRL-A
   {
     key = 'a',
-    mods = 'LEADER|CTRL',
+    mods = 'LEADER',
     action = wezterm.action.SendKey { key = 'a', mods = 'CTRL' },
   },
 }

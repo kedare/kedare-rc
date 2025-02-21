@@ -54,6 +54,11 @@ config.keys = {
     action = act.ActivateTabRelative(-1),
   },
   {
+    key = 'x',
+    mods = 'LEADER',
+    action = act.CloseCurrentPane { confirm = false },
+  },
+  {
     key = 'End',
     mods = 'LEADER',
     action = act.ScrollToBottom,

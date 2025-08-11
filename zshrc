@@ -165,6 +165,52 @@ function gpsu {
   fi
 }
 
+# Function to recursively find and perform git gc on repositories and report space regained
+function git_gc_recursive() {
+  # Find all directories named '.git' and iterate through their parent directories
+  find . -type d -name ".git" | while read -r git_dir; do
+    # Get the parent directory of the .git directory
+    repo_path=$(dirname "$git_dir")
+
+    echo "Processing repository: $repo_path"
+    cd "$repo_path" || continue
+
+    # Get disk usage before gc in bytes
+    size_before_bytes=$(du -s .git | awk '{print $1}')
+
+    # Run git gc
+    echo "  Running 'git gc'..."
+    git gc --quiet --aggressive --force
+
+    # Get disk usage after gc in bytes
+    size_after_bytes=$(du -s .git | awk '{print $1}')
+
+    # Calculate space regained in bytes
+    space_regained_bytes=$((size_before_bytes - size_after_bytes))
+
+    # Convert bytes to a human-readable format
+    function human_readable() {
+      local bytes=$1
+      local units=("B" "KB" "MB" "GB" "TB")
+      local unit_index=0
+      local size=$bytes
+
+      while (( $(echo "$size >= 1024" | bc -l) )) && (( unit_index < 4 )); do
+        size=$(echo "$size / 1024" | bc -l)
+        ((unit_index++))
+      done
+      printf "%.2f %s\n" "$size" "${units[unit_index]}"
+    }
+
+    echo "  Space regained: $(human_readable "$space_regained_bytes")"
+
+    echo "-----------------------------------"
+
+    # Change back to the original directory to continue the search
+    cd - >/dev/null
+  done
+}
+
 touch $HOME/.zshrc.post
 source $HOME/.zshrc.post
 

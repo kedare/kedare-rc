@@ -117,7 +117,10 @@ alias wt='watch -n1 $(fc -ln -1)'
 alias k="kubectl"
 
 # Own .bin
-export PATH="$HOME/.bin:$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+
+# ASDF
+export PATH="$HOME/.asdf/shims:$PATH"
 
 # NodeJS / Yarn
 export PATH="$HOME/.yarn/bin:$PATH"

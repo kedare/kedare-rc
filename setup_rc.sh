@@ -2,7 +2,7 @@
 
 # Configuration
 export PATH=$HOME/.asdf/shims:$HOME/.local/bin:$PATH
-FILES="tmux.conf zshrc wezterm.lua"
+FILES="tmux.conf bashrc zshrc wezterm.lua"
 VERSION_GO=1.25.1
 VERSION_NODEJS=23.8.0
 VERSION_PYTHON=3.13.7
